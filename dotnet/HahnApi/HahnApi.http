@@ -1,0 +1,6 @@
+@HahnApi_HostAddress = http://localhost:5094
+
+GET {{HahnApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
