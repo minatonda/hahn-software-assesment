@@ -19,7 +19,10 @@ static IHostBuilder CreateHostBuilder(string[] args)
                 {
                     app.UseRouting();
 
-                    app.UseHangfireDashboard();
+                    app.UseHangfireDashboard("/hangfire", new DashboardOptions(){
+                         Authorization = new [] { new HangfireAuthorizationFilter() },
+                         
+                    });
                     app.UseEndpoints(endpoints =>
                     {
                         endpoints.MapHangfireDashboard();
